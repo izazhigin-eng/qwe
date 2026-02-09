@@ -47,7 +47,7 @@ void main() {
     print("Bool");
     print("8.==\n9.!=\n10.>\n11.<\n12.>=\n13.<=\n14.&&\n15.||\n16.!");
     var choiceMethode = getInputDouble((int num)=>{num>0 && num <17 })-1;
-    var res = funcs[];
-    print("${res(num1,num2)==0.0 && 3 < choiceMethode < 5 ?}\n");
+    var res = funcs[choiceMethode];
+    print("${res(num1,num2)==0.0 && (choiceMethode>=3) && choiceMethode<= 5?"Деление на 0":res(num1,num2)}\n");
   }
 }
