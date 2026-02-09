@@ -24,7 +24,7 @@ List<double Function(int,int)> funcs = [
   (int num1, int num2)=>double.parse("${num1*num2}"),
   (int num1, int num2)=>(num2!=0?double.parse("${num1/num2}"):0.0),
   (int num1, int num2)=>num2!=0?double.parse("${num1~/num2}"):0.0,
-  (int num1, int num2)=>double.parse("${num1%num2}"),
+  (int num1, int num2)=>(num2!=0?double.parse("${num1%num2}"):0.0),
   (int num1, int num2)=>double.parse("${pow(num1,num2)}"),
   (int num1, int num2)=>double.parse("${num1==num2}"),
   (int num1, int num2)=>double.parse("${num1!=num2}"),
@@ -39,14 +39,15 @@ List<double Function(int,int)> funcs = [
 
 void main() {
   while(true) {
-    int num1 = getInputDouble((int num)=>{num>-900000000},text:"Input num 1: ");
+    int num1 = getInputDouble((int num)=>{true},text:"Input num 1: ");
     int num2 = getInputDouble((int num)=>{true},text:"Input num 2: ");
 
     print("Arithmetic");
     print("1.+\n2.-\n3.*\n4./5.%\n6.~/\n7.pow");
     print("Bool");
     print("8.==\n9.!=\n10.>\n11.<\n12.>=\n13.<=\n14.&&\n15.||\n16.!");
-    var res = funcs[getInputDouble((int num)=>{num>=0 && num <16 })-1];
-    print("${res(num1,num2)}\n");
+    var choiceMethode = getInputDouble((int num)=>{num>0 && num <17 })-1;
+    var res = funcs[];
+    print("${res(num1,num2)==0.0 && 3 < choiceMethode < 5 ?}\n");
   }
 }
